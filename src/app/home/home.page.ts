@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Usuarios } from './interfaces/usuarios';
+import { ServicioService } from './servicio.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuarios: Usuarios[] = []
+  constructor(private servicioTabs: ServicioService) {this.ObtenerU()}
+
+  ObtenerU(){
+    this.servicioTabs.ObtenerUsuarios()
+    .subscribe({next:(data)=>this.usuarios = data})
+  }
 
 }

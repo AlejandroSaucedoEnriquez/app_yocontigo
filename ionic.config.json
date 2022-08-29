@@ -1,0 +1,7 @@
+{
+  "name": "yocontigo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
